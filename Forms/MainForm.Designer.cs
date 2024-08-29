@@ -33,7 +33,6 @@
             this.editEntryButton = new System.Windows.Forms.Button();
             this.deleteEntryButton = new System.Windows.Forms.Button();
             this.saveEntryButton = new System.Windows.Forms.Button();
-            this.debugLabel = new System.Windows.Forms.Label();
             this.entriesGridView = new System.Windows.Forms.DataGridView();
             this.GridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,69 +43,92 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.addEntryButton);
-            this.flowLayoutPanel1.Controls.Add(this.editEntryButton);
             this.flowLayoutPanel1.Controls.Add(this.deleteEntryButton);
             this.flowLayoutPanel1.Controls.Add(this.saveEntryButton);
-            this.flowLayoutPanel1.Controls.Add(this.debugLabel);
+            this.flowLayoutPanel1.Controls.Add(this.addEntryButton);
+            this.flowLayoutPanel1.Controls.Add(this.editEntryButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1260, 106);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1134, 105);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // addEntryButton
             // 
-            this.addEntryButton.BackgroundImage = global::WinPasser.Properties.Resources.plus_90;
-            this.addEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addEntryButton.Location = new System.Drawing.Point(3, 3);
+            this.addEntryButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.addEntryButton.AutoSize = true;
+            this.addEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addEntryButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addEntryButton.Image = global::WinPasser.Properties.Resources.plus_square;
+            this.addEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addEntryButton.Location = new System.Drawing.Point(570, 3);
+            this.addEntryButton.Margin = new System.Windows.Forms.Padding(0);
+            this.addEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
+            this.addEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
             this.addEntryButton.Name = "addEntryButton";
-            this.addEntryButton.Size = new System.Drawing.Size(90, 90);
+            this.addEntryButton.Size = new System.Drawing.Size(279, 100);
             this.addEntryButton.TabIndex = 0;
+            this.addEntryButton.Text = "Добавить";
+            this.addEntryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addEntryButton.UseVisualStyleBackColor = true;
             this.addEntryButton.Click += new System.EventHandler(this.AddEntryButton_Click);
             // 
             // editEntryButton
             // 
-            this.editEntryButton.BackgroundImage = global::WinPasser.Properties.Resources.pencil_512;
+            this.editEntryButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.editEntryButton.AutoSize = true;
             this.editEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.editEntryButton.Location = new System.Drawing.Point(99, 3);
+            this.editEntryButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editEntryButton.Image = global::WinPasser.Properties.Resources.edit_3;
+            this.editEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editEntryButton.Location = new System.Drawing.Point(852, 3);
+            this.editEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
+            this.editEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
             this.editEntryButton.Name = "editEntryButton";
-            this.editEntryButton.Size = new System.Drawing.Size(90, 90);
+            this.editEntryButton.Size = new System.Drawing.Size(279, 100);
             this.editEntryButton.TabIndex = 4;
+            this.editEntryButton.Text = "Редактировать";
+            this.editEntryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.editEntryButton.UseVisualStyleBackColor = true;
             this.editEntryButton.Click += new System.EventHandler(this.editEntryButton_Click);
             // 
             // deleteEntryButton
             // 
-            this.deleteEntryButton.BackgroundImage = global::WinPasser.Properties.Resources.delete_90;
+            this.deleteEntryButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.deleteEntryButton.AutoSize = true;
             this.deleteEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.deleteEntryButton.Location = new System.Drawing.Point(195, 3);
+            this.deleteEntryButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteEntryButton.Image = global::WinPasser.Properties.Resources.trash_2;
+            this.deleteEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deleteEntryButton.Location = new System.Drawing.Point(3, 3);
+            this.deleteEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
+            this.deleteEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
             this.deleteEntryButton.Name = "deleteEntryButton";
-            this.deleteEntryButton.Size = new System.Drawing.Size(90, 90);
+            this.deleteEntryButton.Size = new System.Drawing.Size(279, 100);
             this.deleteEntryButton.TabIndex = 1;
+            this.deleteEntryButton.Text = "Удалить";
+            this.deleteEntryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.deleteEntryButton.UseVisualStyleBackColor = true;
             this.deleteEntryButton.Click += new System.EventHandler(this.deleteEntryButton_Click);
             // 
             // saveEntryButton
             // 
-            this.saveEntryButton.BackgroundImage = global::WinPasser.Properties.Resources.save_90;
+            this.saveEntryButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.saveEntryButton.AutoSize = true;
             this.saveEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.saveEntryButton.Location = new System.Drawing.Point(291, 3);
+            this.saveEntryButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveEntryButton.Image = global::WinPasser.Properties.Resources.save;
+            this.saveEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.saveEntryButton.Location = new System.Drawing.Point(288, 3);
+            this.saveEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
+            this.saveEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
             this.saveEntryButton.Name = "saveEntryButton";
-            this.saveEntryButton.Size = new System.Drawing.Size(90, 90);
+            this.saveEntryButton.Size = new System.Drawing.Size(279, 100);
             this.saveEntryButton.TabIndex = 3;
+            this.saveEntryButton.Text = "Сохранить";
+            this.saveEntryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.saveEntryButton.UseVisualStyleBackColor = true;
             this.saveEntryButton.Click += new System.EventHandler(this.saveEntryButton_Click);
-            // 
-            // debugLabel
-            // 
-            this.debugLabel.AutoSize = true;
-            this.debugLabel.Location = new System.Drawing.Point(387, 0);
-            this.debugLabel.Name = "debugLabel";
-            this.debugLabel.Size = new System.Drawing.Size(35, 13);
-            this.debugLabel.TabIndex = 2;
-            this.debugLabel.Text = "label1";
             // 
             // entriesGridView
             // 
@@ -120,11 +142,11 @@
             this.GridLogin,
             this.GridPassword});
             this.entriesGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.entriesGridView.Location = new System.Drawing.Point(0, 106);
+            this.entriesGridView.Location = new System.Drawing.Point(0, 105);
             this.entriesGridView.Name = "entriesGridView";
             this.entriesGridView.ReadOnly = true;
             this.entriesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.entriesGridView.Size = new System.Drawing.Size(1260, 686);
+            this.entriesGridView.Size = new System.Drawing.Size(1134, 574);
             this.entriesGridView.TabIndex = 1;
             this.entriesGridView.DoubleClick += new System.EventHandler(this.entriesGridView_DoubleClick);
             // 
@@ -150,10 +172,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 792);
+            this.ClientSize = new System.Drawing.Size(1134, 679);
             this.Controls.Add(this.entriesGridView);
             this.Controls.Add(this.flowLayoutPanel1);
             this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(1150, 500);
             this.Name = "MainForm";
             this.Text = "Passer - парольный менеджер";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
@@ -172,7 +195,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GridLogin;
         private System.Windows.Forms.DataGridViewTextBoxColumn GridPassword;
         private System.Windows.Forms.Button deleteEntryButton;
-        private System.Windows.Forms.Label debugLabel;
         private System.Windows.Forms.Button saveEntryButton;
         private System.Windows.Forms.Button editEntryButton;
     }

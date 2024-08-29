@@ -6,7 +6,7 @@ namespace WinPasser.Forms
 {
     public partial class EditEntryForm : Form
     {
-        Entry activeEntry;
+        private readonly Entry activeEntry;
 
         public EditEntryForm()
         {

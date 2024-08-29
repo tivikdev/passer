@@ -59,7 +59,6 @@ namespace WinPasser
         private void SaveDatabase(string filePath)
         {
             database.SaveToJson(filePath);
-            debugLabel.Text = "Saved to " + filePath;
         }
 
         private void saveEntryButton_Click(object sender, EventArgs e) => SaveDatabase(filePath);
@@ -75,7 +74,6 @@ namespace WinPasser
         private void EditEntry()
         {
             int EntryID = entriesGridView.CurrentCell.RowIndex;
-            debugLabel.Text = EntryID.ToString();
             DataBank.ActiveEntry = database.entries[EntryID];
             EditEntryForm editEntryForm = new EditEntryForm();
             if (editEntryForm.ShowDialog() == DialogResult.OK)
