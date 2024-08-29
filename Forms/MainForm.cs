@@ -27,6 +27,11 @@ namespace WinPasser
             }
         }
 
+        internal void ClearGridSelection(object sender, EventArgs e)
+        {
+            entriesGridView.ClearSelection();
+        }
+
         private void AddEntryButton_Click(object sender, EventArgs e)
         {
             AddEntry();

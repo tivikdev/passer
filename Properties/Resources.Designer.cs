@@ -83,16 +83,6 @@ namespace WinPasser.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap airplay {
-            get {
-                object obj = ResourceManager.GetObject("airplay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap alert_circle {
             get {
                 object obj = ResourceManager.GetObject("alert_circle", resourceCulture);
@@ -926,16 +916,6 @@ namespace WinPasser.Properties {
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delete_90 {
-            get {
-                object obj = ResourceManager.GetObject("delete_90", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1883,16 +1863,6 @@ namespace WinPasser.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pencil_512 {
-            get {
-                object obj = ResourceManager.GetObject("pencil_512", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap percent {
             get {
                 object obj = ResourceManager.GetObject("percent", resourceCulture);
@@ -2006,16 +1976,6 @@ namespace WinPasser.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap plus_90 {
-            get {
-                object obj = ResourceManager.GetObject("plus_90", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2156,16 +2116,6 @@ namespace WinPasser.Properties {
         internal static System.Drawing.Bitmap save {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap save_90 {
-            get {
-                object obj = ResourceManager.GetObject("save_90", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
