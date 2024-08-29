@@ -27,7 +27,7 @@ namespace WinPasser.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowPassword.ToggleButton(passwordTextBox);
+            passwordTextBox.Text = Generate.Password();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -45,6 +45,11 @@ namespace WinPasser.Forms
             DataBank.ActiveEntry = activeEntry;
 
             ActiveForm.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ShowPassword.ToggleButton(passwordTextBox);
         }
     }
 }
