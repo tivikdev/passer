@@ -262,7 +262,6 @@
             this.Controls.Add(this.entriesGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1150, 500);
             this.Name = "MainForm";
