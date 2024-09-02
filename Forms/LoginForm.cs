@@ -26,7 +26,7 @@ namespace WinPasser
         private void acceptButton_Click(object sender, EventArgs e)
         {
             DataBank.FilePath = openFileDialog1.FileName;
-            DataBank.Password = passwordTextBox.Text;
+            DataBank.Key = CryptoTools.StringToByteArray(passwordTextBox.Text);
         }
     }
 }

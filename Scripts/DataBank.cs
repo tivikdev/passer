@@ -8,6 +8,6 @@
 
         public static string FilePath { get; set; }
 
-        public static string Password { get; set; }
+        public static byte[] Key { get; set; }
     }
 }

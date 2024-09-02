@@ -16,9 +16,15 @@ namespace WinPasser
             InitializeComponent();
             if (DataBank.FilePath == null)
             {
-                LoginForm loginForm = new LoginForm();
-                loginForm.ShowDialog();
-                filePath = DataBank.FilePath;
+                StartForm startForm = new StartForm();
+                if (startForm.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = DataBank.FilePath;
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
             if (File.Exists(filePath))
             {
@@ -94,7 +100,7 @@ namespace WinPasser
             entriesGridView.Rows.Clear();
             foreach (Entry entry in database.entries)
             {
-                entriesGridView.Rows.Add(entry.Title, entry.Login, entry.Password);
+                entriesGridView.Rows.Add(entry.Title, entry.Login, "••••••••••••••••");
             }
         }
         private void entriesGridView_DoubleClick(object sender, EventArgs e) => EditEntry();

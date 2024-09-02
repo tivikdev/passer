@@ -23,7 +23,7 @@ namespace WinPasser
             {
                 SaltedBytes saltedBytes = Newtonsoft.Json.JsonConvert.DeserializeObject<SaltedBytes>(jsonLines);
                 string decryptedEntriesString = CryptoTools.DecryptStringFromBytes_Aes(saltedBytes.bytes,
-                    CryptoTools.HashBytes(CryptoTools.StringToBytes(DataBank.Password)), saltedBytes.IV);
+                    CryptoTools.HashBytes(DataBank.Key), saltedBytes.IV);
                 entries = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entry>>(decryptedEntriesString);
             }
         }
@@ -34,7 +34,7 @@ namespace WinPasser
             SaltedBytes saltedBytes = new SaltedBytes();
             using (Aes myAes = Aes.Create())
             {
-                myAes.Key = CryptoTools.HashBytes(CryptoTools.StringToBytes(DataBank.Password));
+                myAes.Key = CryptoTools.HashBytes(DataBank.Key);
                 byte[] encryptedBytes = CryptoTools.EncryptStringToBytes_Aes(jsonLines, myAes.Key, myAes.IV);
                 saltedBytes = new SaltedBytes()
                 {

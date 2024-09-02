@@ -12,13 +12,13 @@ namespace WinPasser.Scripts
             if (plainText == null)
                 throw new ArgumentNullException("plainText");
 
-            byte[] bytes = StringToBytes(plainText);
+            byte[] bytes = StringToByteArray(plainText);
             string hash = Encoding.UTF8.GetString(HashBytes(bytes));
 
             return hash;
         }
 
-        public static byte[] StringToBytes(string plainText)
+        public static byte[] StringToByteArray(string plainText)
         {
             if (plainText == null)
                 throw new ArgumentNullException("plainText");
