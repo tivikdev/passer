@@ -51,10 +51,5 @@ namespace WinPasser.Forms
         {
             ShowPassword.ToggleButton(passwordTextBox);
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -16,20 +16,25 @@ namespace WinPasser
             InitializeComponent();
             if (DataBank.FilePath == null)
             {
-                StartForm startForm = new StartForm();
-                if (startForm.ShowDialog() == DialogResult.OK)
+                using (StartForm startForm = new StartForm())
                 {
-                    filePath = DataBank.FilePath;
-                }
-                else
-                {
-                    Application.Exit();
+                    if (startForm.ShowDialog() == DialogResult.OK)
+                    {
+                        filePath = DataBank.FilePath;
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
                 }
             }
             if (File.Exists(filePath))
             {
-                database.LoadFromJson(filePath);
-                FreshUpdateDataGridRows();
+                if (database.TryDecryptJson(filePath))
+                {
+                    database.LoadFromJson(filePath);
+                    FreshUpdateDataGridRows();
+                }
             }
         }
 
@@ -57,10 +62,9 @@ namespace WinPasser
             }
         }
 
-
         private void deleteEntryButton_Click(object sender, EventArgs e)
         {
-            if (entriesGridView.Rows.Count == 0) 
+            if (entriesGridView.Rows.Count <= 0) 
                 return;
 
             database.entries.RemoveAt(entriesGridView.CurrentCell.RowIndex);
@@ -84,7 +88,10 @@ namespace WinPasser
 
         private void EditEntry()
         {
-            int EntryID = entriesGridView.CurrentCell.RowIndex;
+            if (entriesGridView.Rows.Count <= 0)
+                return;
+
+            int EntryID = entriesGridView.CurrentCell.RowIndex + 1;
             DataBank.ActiveEntry = database.entries[EntryID];
             EditEntryForm editEntryForm = new EditEntryForm();
             if (editEntryForm.ShowDialog() == DialogResult.OK)
@@ -100,9 +107,11 @@ namespace WinPasser
             entriesGridView.Rows.Clear();
             foreach (Entry entry in database.entries)
             {
-                entriesGridView.Rows.Add(entry.Title, entry.Login, "••••••••••••••••");
+                if (!entry.Invisible)
+                    entriesGridView.Rows.Add(entry.Title, entry.Login, "••••••••••••••••");
             }
         }
+
         private void entriesGridView_DoubleClick(object sender, EventArgs e) => EditEntry();
 
         private void editEntryButton_Click(object sender, EventArgs e) => EditEntry();

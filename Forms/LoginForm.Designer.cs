@@ -105,7 +105,7 @@
             this.showPasswordCheckBox.Location = new System.Drawing.Point(300, 354);
             this.showPasswordCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.showPasswordCheckBox.Name = "showPasswordCheckBox";
-            this.showPasswordCheckBox.Size = new System.Drawing.Size(163, 23);
+            this.showPasswordCheckBox.Size = new System.Drawing.Size(140, 20);
             this.showPasswordCheckBox.TabIndex = 11;
             this.showPasswordCheckBox.Text = "Показать пароль";
             this.showPasswordCheckBox.UseVisualStyleBackColor = true;
@@ -115,7 +115,6 @@
             // 
             this.acceptButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.acceptButton.AutoSize = true;
-            this.acceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.acceptButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.acceptButton.Location = new System.Drawing.Point(300, 385);
             this.acceptButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

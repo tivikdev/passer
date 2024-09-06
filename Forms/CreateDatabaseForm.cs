@@ -22,13 +22,13 @@ namespace WinPasser.Forms
 
         private void createDatabaseButton_Click(object sender, EventArgs e)
         {
-            string plainPassword = passwordTextBox.Text;
-            if (plainPassword == string.Empty || DataBank.FilePath == null)
-            {
+            if (createDatabaseDialog.FileName == string.Empty || passwordTextBox.Text == string.Empty)
                 return;
-            }
 
+            string plainPassword = passwordTextBox.Text;
             DataBank.Key = CryptoTools.StringToByteArray(plainPassword);
+
+            DialogResult = DialogResult.OK;
         }
     }
 }

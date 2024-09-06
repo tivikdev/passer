@@ -7,7 +7,41 @@ namespace WinPasser
 {
     internal class Database
     {
-        public List<Entry> entries = new List<Entry>();
+        public List<Entry> entries = new List<Entry>()
+        {
+            new Entry()
+            {
+                Invisible = true,
+            }
+        };
+
+        internal bool TryDecryptJson(string path)
+        {
+            string jsonLines;
+            using (StreamReader reader = new StreamReader(path))
+            {
+                jsonLines = reader.ReadToEnd();
+                reader.Close();
+                reader.Dispose();
+            }
+
+            if (jsonLines != string.Empty)
+            {
+                try
+                {
+                    SaltedBytes saltedBytes = Newtonsoft.Json.JsonConvert.DeserializeObject<SaltedBytes>(jsonLines);
+                    string decryptedEntriesString = CryptoTools.DecryptStringFromBytes_Aes(saltedBytes.bytes,
+                        CryptoTools.HashBytes(DataBank.Key), saltedBytes.IV);
+                    entries = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entry>>(decryptedEntriesString);
+                }
+                catch (System.Exception)
+                {
+                    return false;
+                    throw;
+                }
+            }
+            return true;
+        }
 
         internal void LoadFromJson(string path)
         {

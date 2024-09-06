@@ -25,8 +25,17 @@ namespace WinPasser
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
+            if (openFileDialog1.FileName == string.Empty || passwordTextBox.Text == string.Empty)
+                return;
+
             DataBank.FilePath = openFileDialog1.FileName;
             DataBank.Key = CryptoTools.StringToByteArray(passwordTextBox.Text);
+            Database database = new Database();
+
+            if (database.TryDecryptJson(DataBank.FilePath))
+                DialogResult = DialogResult.OK;
+            else
+                MessageBox.Show("Что-то не так...");
         }
     }
 }

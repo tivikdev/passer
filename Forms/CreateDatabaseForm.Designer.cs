@@ -117,7 +117,6 @@
             // 
             this.createDatabaseButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.createDatabaseButton.AutoSize = true;
-            this.createDatabaseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.createDatabaseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.createDatabaseButton.Location = new System.Drawing.Point(328, 340);
             this.createDatabaseButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
