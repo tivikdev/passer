@@ -9,5 +9,7 @@
         public static string FilePath { get; set; }
 
         public static byte[] Key { get; set; }
+
+        public static bool NeedToExit { get; set; }
     }
 }

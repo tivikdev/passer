@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             this.CreateDatabaseButton = new System.Windows.Forms.Button();
             this.OpenDatabaseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             this.OpenDatabaseButton.UseVisualStyleBackColor = true;
             this.OpenDatabaseButton.Click += new System.EventHandler(this.OpenDatabaseButton_Click);
             // 
-            // Start
+            // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -62,8 +63,9 @@
             this.Controls.Add(this.OpenDatabaseButton);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Start";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start";
             this.ResumeLayout(false);

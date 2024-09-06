@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateDatabaseForm));
             this.fileLabel = new System.Windows.Forms.Label();
             this.fileTextBox = new System.Windows.Forms.TextBox();
             this.selectFileButton = new System.Windows.Forms.Button();
@@ -146,6 +147,8 @@
             this.Controls.Add(this.showPasswordCheckBox);
             this.Controls.Add(this.createDatabaseButton);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateDatabaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

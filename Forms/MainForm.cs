@@ -19,13 +19,9 @@ namespace WinPasser
                 using (StartForm startForm = new StartForm())
                 {
                     if (startForm.ShowDialog() == DialogResult.OK)
-                    {
-                        filePath = DataBank.FilePath;
-                    }
+                            filePath = DataBank.FilePath;
                     else
-                    {
-                        Application.Exit();
-                    }
+                            DataBank.NeedToExit = true;
                 }
             }
             if (File.Exists(filePath))
@@ -38,7 +34,21 @@ namespace WinPasser
             }
         }
 
-        internal void ClearGridSelection(object sender, EventArgs e)
+        internal void OnLoad(object sender, EventArgs e)
+        {
+            ExitIfNeeded();
+            ClearGridSelection();
+        }
+
+        private void ExitIfNeeded()
+        {
+            if (DataBank.NeedToExit)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void ClearGridSelection()
         {
             entriesGridView.ClearSelection();
         }
@@ -73,6 +83,9 @@ namespace WinPasser
 
         private void SaveDatabase(string filePath)
         {
+            if (!File.Exists(filePath) || filePath == string.Empty)
+                return;
+
             database.SaveToJson(filePath);
         }
 
