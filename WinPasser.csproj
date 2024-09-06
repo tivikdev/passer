@@ -7,7 +7,7 @@
     <ProjectGuid>{F43F3D65-F880-4BCA-BF1A-2D7FE70DBC12}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WinPasser</RootNamespace>
-    <AssemblyName>WinPasser</AssemblyName>
+    <AssemblyName>Passer</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
