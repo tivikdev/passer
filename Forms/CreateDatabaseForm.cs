@@ -26,6 +26,7 @@ namespace WinPasser.Forms
                 return;
 
             string plainPassword = passwordTextBox.Text;
+            DataBank.FilePath = createDatabaseDialog.FileName;
             DataBank.Key = CryptoTools.StringToByteArray(plainPassword);
 
             DialogResult = DialogResult.OK;

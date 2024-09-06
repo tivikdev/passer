@@ -83,7 +83,7 @@ namespace WinPasser
 
         private void SaveDatabase(string filePath)
         {
-            if (!File.Exists(filePath) || filePath == string.Empty)
+            if (filePath == string.Empty)
                 return;
 
             database.SaveToJson(filePath);
