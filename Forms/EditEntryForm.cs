@@ -27,7 +27,12 @@ namespace WinPasser.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            passwordTextBox.Text = Generate.Password();
+            PasswordGeneratorForm passwordGeneratorForm = new PasswordGeneratorForm();
+            if(passwordGeneratorForm.ShowDialog() == DialogResult.OK)
+            {
+                passwordTextBox.Text = DataBank.GeneratedPassword;
+                DataBank.GeneratedPassword = string.Empty;
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

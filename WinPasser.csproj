@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -22,9 +23,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>ru-RU</TargetCulture>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -85,13 +86,18 @@
     <Compile Include="Forms\EditEntryForm.Designer.cs">
       <DependentUpon>EditEntryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PasswordGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordGeneratorForm.Designer.cs">
+      <DependentUpon>PasswordGeneratorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Beauty.cs" />
     <Compile Include="Scripts\CryptoTools.cs" />
     <Compile Include="Scripts\DataBank.cs" />
     <Compile Include="Scripts\Database.cs" />
@@ -110,6 +116,8 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Scripts\Generate.cs" />
+    <Compile Include="Scripts\PasswordGeneratorProperties.cs" />
+    <Compile Include="Scripts\PasswordProperty.cs" />
     <Compile Include="Scripts\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\SaltedBytes.cs" />
@@ -125,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordGeneratorForm.resx">
+      <DependentUpon>PasswordGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
@@ -1041,6 +1052,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="passer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".passer">
+      <Visible>False</Visible>
+      <Description>База данных Passer</Description>
+      <Progid>Passer</Progid>
+      <DefaultIcon>passer.ico</DefaultIcon>
+    </FileAssociation>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

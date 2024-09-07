@@ -11,5 +11,7 @@
         public static byte[] Key { get; set; }
 
         public static bool NeedToExit { get; set; }
+
+        public static string GeneratedPassword { get; set; }
     }
 }
