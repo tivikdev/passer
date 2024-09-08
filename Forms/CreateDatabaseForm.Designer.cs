@@ -113,6 +113,7 @@
             this.showPasswordCheckBox.TabIndex = 18;
             this.showPasswordCheckBox.Text = "Показать пароль";
             this.showPasswordCheckBox.UseVisualStyleBackColor = true;
+            this.showPasswordCheckBox.CheckedChanged += new System.EventHandler(this.showPasswordCheckBox_CheckedChanged);
             // 
             // createDatabaseButton
             // 
