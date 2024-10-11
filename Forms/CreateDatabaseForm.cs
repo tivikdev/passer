@@ -22,7 +22,7 @@ namespace WinPasser.Forms
 
         private void createDatabaseButton_Click(object sender, EventArgs e)
         {
-            if (createDatabaseDialog.FileName == string.Empty || passwordTextBox.Text == string.Empty)
+            if (string.IsNullOrEmpty(createDatabaseDialog.FileName) || string.IsNullOrEmpty(passwordTextBox.Text))
                 return;
 
             string plainPassword = passwordTextBox.Text;

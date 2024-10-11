@@ -9,7 +9,7 @@ namespace WinPasser.Scripts
     {
         public static string GetStringHash(string plainText)
         {
-            if (plainText == null)
+            if (string.IsNullOrEmpty(plainText))
                 throw new ArgumentNullException("plainText");
 
             byte[] bytes = StringToByteArray(plainText);
@@ -20,7 +20,7 @@ namespace WinPasser.Scripts
 
         public static byte[] StringToByteArray(string plainText)
         {
-            if (plainText == null)
+            if (string.IsNullOrEmpty(plainText))
                 throw new ArgumentNullException("plainText");
 
             byte[] bites = Encoding.UTF8.GetBytes(plainText);
@@ -42,7 +42,7 @@ namespace WinPasser.Scripts
         public static byte[] EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
         {
             // Check arguments.
-            if (plainText == null || plainText.Length <= 0)
+            if (string.IsNullOrEmpty(plainText))
                 throw new ArgumentNullException("plainText");
             if (Key == null || Key.Length <= 0)
                 throw new ArgumentNullException("Key");

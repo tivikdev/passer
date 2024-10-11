@@ -25,7 +25,7 @@ namespace WinPasser
                 reader.Dispose();
             }
 
-            if (jsonLines != string.Empty)
+            if (!string.IsNullOrEmpty(jsonLines))
             {
                 try
                 {
@@ -53,7 +53,7 @@ namespace WinPasser
                 reader.Dispose();
             }
 
-            if (jsonLines != string.Empty)
+            if (!string.IsNullOrEmpty(jsonLines))
             {
                 SaltedBytes saltedBytes = Newtonsoft.Json.JsonConvert.DeserializeObject<SaltedBytes>(jsonLines);
                 string decryptedEntriesString = CryptoTools.DecryptStringFromBytes_Aes(saltedBytes.bytes,

@@ -14,7 +14,7 @@ namespace WinPasser
         public MainForm()
         {
             InitializeComponent();
-            if (DataBank.FilePath == null)
+            if (string.IsNullOrEmpty(DataBank.FilePath))
             {
                 using (StartForm startForm = new StartForm())
                 {
@@ -83,7 +83,7 @@ namespace WinPasser
 
         private void SaveDatabase(string filePath)
         {
-            if (filePath == string.Empty)
+            if (string.IsNullOrEmpty(filePath))
                 return;
 
             database.SaveToJson(filePath);
