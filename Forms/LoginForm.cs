@@ -25,7 +25,7 @@ namespace WinPasser
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(openFileDialog1.FileName)|| string.IsNullOrEmpty(passwordTextBox.Text))
+            if (openFileDialog1.FileName == string.Empty || passwordTextBox.Text == string.Empty)
                 return;
 
             DataBank.FilePath = openFileDialog1.FileName;

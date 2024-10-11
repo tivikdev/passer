@@ -25,7 +25,7 @@ namespace WinPasser
                 reader.Dispose();
             }
 
-            if (string.IsNullOrEmpty(jsonLines))
+            if (jsonLines != string.Empty)
             {
                 try
                 {
