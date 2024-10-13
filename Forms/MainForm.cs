@@ -34,11 +34,6 @@ namespace WinPasser
             }
         }
 
-        internal void OnLoad(object sender, EventArgs e)
-        {
-            ExitIfNeeded();
-            ClearGridSelection();
-        }
 
         private void ExitIfNeeded()
         {
@@ -53,10 +48,6 @@ namespace WinPasser
             entriesGridView.ClearSelection();
         }
 
-        private void AddEntryButton_Click(object sender, EventArgs e)
-        {
-            AddEntry();
-        }
 
         private void AddEntry()
         {
@@ -72,14 +63,6 @@ namespace WinPasser
             }
         }
 
-        private void deleteEntryButton_Click(object sender, EventArgs e)
-        {
-            if (entriesGridView.Rows.Count <= 0) 
-                return;
-
-            database.entries.RemoveAt(entriesGridView.CurrentCell.RowIndex);
-            FreshUpdateDataGridRows();
-        }
 
         private void SaveDatabase(string filePath)
         {
@@ -89,13 +72,20 @@ namespace WinPasser
             database.SaveToJson(filePath);
         }
 
-        private void saveEntryButton_Click(object sender, EventArgs e) => SaveDatabase(filePath);
-
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        private Entry GetSelectedEntry()
         {
-            if (e.Control && e.KeyCode == Keys.S)
+            if (entriesGridView.SelectedRows.Count == 0)
+                return null;
+            
+            return database.entries[entriesGridView.CurrentCell.RowIndex + 1];
+        }
+
+        private void CopyPassword()
+        {
+            Entry selectedEntry = GetSelectedEntry();
+            if (selectedEntry != null)
             {
-                SaveDatabase(filePath);
+                Clipboard.SetText(selectedEntry.Password);
             }
         }
 
@@ -125,9 +115,43 @@ namespace WinPasser
             }
         }
 
+        #region Events
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                SaveDatabase(filePath);
+            }
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+                CopyPassword();
+            }
+        }
+
+        internal void OnLoad(object sender, EventArgs e)
+        {
+            ExitIfNeeded();
+            ClearGridSelection();
+        }
+        private void deleteEntryButton_Click(object sender, EventArgs e)
+        {
+            if (entriesGridView.Rows.Count <= 0) 
+                return;
+
+            database.entries.RemoveAt(entriesGridView.CurrentCell.RowIndex);
+            FreshUpdateDataGridRows();
+        }
+
+        private void AddEntryButton_Click(object sender, EventArgs e) => AddEntry();
+
+        private void saveEntryButton_Click(object sender, EventArgs e) => SaveDatabase(filePath);
+
         private void entriesGridView_DoubleClick(object sender, EventArgs e) => EditEntry();
 
         private void editEntryButton_Click(object sender, EventArgs e) => EditEntry();
+
+        private void copyPasswordButton_Click(object sender, EventArgs e) => CopyPassword();
+        #endregion
     }
 }
 //I hope I'll understand this shit tomorrow
