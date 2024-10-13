@@ -38,6 +38,8 @@
             this.acceptButton = new System.Windows.Forms.Button();
             this.fileTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordTextBox.Location = new System.Drawing.Point(300, 324);
+            this.passwordTextBox.Location = new System.Drawing.Point(146, 244);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(409, 21);
@@ -61,7 +63,7 @@
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordLabel.ForeColor = System.Drawing.Color.White;
-            this.passwordLabel.Location = new System.Drawing.Point(300, 292);
+            this.passwordLabel.Location = new System.Drawing.Point(146, 194);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(89, 25);
@@ -74,7 +76,7 @@
             this.selectFileButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.selectFileButton.AutoSize = true;
             this.selectFileButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.selectFileButton.Location = new System.Drawing.Point(566, 257);
+            this.selectFileButton.Location = new System.Drawing.Point(412, 159);
             this.selectFileButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectFileButton.Name = "selectFileButton";
             this.selectFileButton.Size = new System.Drawing.Size(144, 29);
@@ -89,7 +91,7 @@
             this.fileLabel.AutoSize = true;
             this.fileLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fileLabel.ForeColor = System.Drawing.Color.White;
-            this.fileLabel.Location = new System.Drawing.Point(300, 227);
+            this.fileLabel.Location = new System.Drawing.Point(146, 109);
             this.fileLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fileLabel.Name = "fileLabel";
             this.fileLabel.Size = new System.Drawing.Size(66, 25);
@@ -103,7 +105,7 @@
             this.showPasswordCheckBox.AutoSize = true;
             this.showPasswordCheckBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showPasswordCheckBox.ForeColor = System.Drawing.Color.White;
-            this.showPasswordCheckBox.Location = new System.Drawing.Point(300, 354);
+            this.showPasswordCheckBox.Location = new System.Drawing.Point(146, 274);
             this.showPasswordCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.showPasswordCheckBox.Name = "showPasswordCheckBox";
             this.showPasswordCheckBox.Size = new System.Drawing.Size(140, 20);
@@ -117,7 +119,7 @@
             this.acceptButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.acceptButton.AutoSize = true;
             this.acceptButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.acceptButton.Location = new System.Drawing.Point(300, 385);
+            this.acceptButton.Location = new System.Drawing.Point(146, 305);
             this.acceptButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(410, 33);
@@ -129,7 +131,7 @@
             // fileTextBox
             // 
             this.fileTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.fileTextBox.Location = new System.Drawing.Point(300, 260);
+            this.fileTextBox.Location = new System.Drawing.Point(146, 162);
             this.fileTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.fileTextBox.Name = "fileTextBox";
             this.fileTextBox.Size = new System.Drawing.Size(258, 21);
@@ -138,6 +140,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.fileLabel);
             this.panel1.Controls.Add(this.fileTextBox);
             this.panel1.Controls.Add(this.selectFileButton);
@@ -150,15 +154,43 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1035, 700);
+            this.panel1.Size = new System.Drawing.Size(727, 540);
             this.panel1.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(147, 134);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(379, 22);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "выберите существующую базу .passer";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(147, 219);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 22);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "для открытия базы";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateBlue;
-            this.ClientSize = new System.Drawing.Size(1035, 700);
+            this.ClientSize = new System.Drawing.Size(727, 540);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -185,6 +217,8 @@
         private System.Windows.Forms.Button acceptButton;
         private System.Windows.Forms.TextBox fileTextBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

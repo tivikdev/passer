@@ -7,17 +7,6 @@ namespace WinPasser.Scripts
 {
     internal static class CryptoTools
     {
-        public static string GetStringHash(string plainText)
-        {
-            if (string.IsNullOrEmpty(plainText))
-                throw new ArgumentNullException("plainText");
-
-            byte[] bytes = StringToByteArray(plainText);
-            string hash = Encoding.UTF8.GetString(HashBytes(bytes));
-
-            return hash;
-        }
-
         public static byte[] StringToByteArray(string plainText)
         {
             if (string.IsNullOrEmpty(plainText))

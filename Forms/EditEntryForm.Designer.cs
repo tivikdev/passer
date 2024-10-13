@@ -38,8 +38,8 @@
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.showPasswordCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // titleTextBox
@@ -79,14 +79,14 @@
             this.passwordTextBox.Location = new System.Drawing.Point(140, 174);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(261, 21);
+            this.passwordTextBox.Size = new System.Drawing.Size(353, 21);
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // showPasswordButton
             // 
             this.showPasswordButton.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showPasswordButton.Location = new System.Drawing.Point(408, 172);
+            this.showPasswordButton.Location = new System.Drawing.Point(501, 171);
             this.showPasswordButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.showPasswordButton.Name = "showPasswordButton";
             this.showPasswordButton.Size = new System.Drawing.Size(136, 27);
@@ -141,18 +141,6 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(552, 172);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 27);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Показать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -165,6 +153,21 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Редактирование";
             // 
+            // showPasswordCheckBox
+            // 
+            this.showPasswordCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showPasswordCheckBox.AutoSize = true;
+            this.showPasswordCheckBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showPasswordCheckBox.ForeColor = System.Drawing.Color.White;
+            this.showPasswordCheckBox.Location = new System.Drawing.Point(140, 201);
+            this.showPasswordCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.showPasswordCheckBox.Name = "showPasswordCheckBox";
+            this.showPasswordCheckBox.Size = new System.Drawing.Size(140, 20);
+            this.showPasswordCheckBox.TabIndex = 12;
+            this.showPasswordCheckBox.Text = "Показать пароль";
+            this.showPasswordCheckBox.UseVisualStyleBackColor = true;
+            this.showPasswordCheckBox.CheckedChanged += new System.EventHandler(this.showPasswordCheckBox_CheckedChanged);
+            // 
             // EditEntryForm
             // 
             this.AcceptButton = this.saveButton;
@@ -173,8 +176,8 @@
             this.BackColor = System.Drawing.Color.SlateBlue;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(652, 295);
+            this.Controls.Add(this.showPasswordCheckBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.loginLabel);
@@ -208,7 +211,7 @@
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox showPasswordCheckBox;
     }
 }

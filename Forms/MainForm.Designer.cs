@@ -37,14 +37,14 @@
             this.addEntryButton = new System.Windows.Forms.Button();
             this.editEntryButton = new System.Windows.Forms.Button();
             this.entriesGridView = new System.Windows.Forms.DataGridView();
-            this.GridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.GridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.entriesGridView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -192,24 +192,6 @@
             this.entriesGridView.TabStop = false;
             this.entriesGridView.DoubleClick += new System.EventHandler(this.entriesGridView_DoubleClick);
             // 
-            // GridName
-            // 
-            this.GridName.HeaderText = "Название";
-            this.GridName.Name = "GridName";
-            this.GridName.ReadOnly = true;
-            // 
-            // GridLogin
-            // 
-            this.GridLogin.HeaderText = "Логин";
-            this.GridLogin.Name = "GridLogin";
-            this.GridLogin.ReadOnly = true;
-            // 
-            // GridPassword
-            // 
-            this.GridPassword.HeaderText = "Пароль";
-            this.GridPassword.Name = "GridPassword";
-            this.GridPassword.ReadOnly = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Snow;
@@ -260,6 +242,27 @@
             this.saveFileDialog1.CreatePrompt = true;
             this.saveFileDialog1.DefaultExt = "passer";
             this.saveFileDialog1.Filter = "Passer-база|*.passer|Все файлы|*.*";
+            // 
+            // GridName
+            // 
+            this.GridName.HeaderText = "Название";
+            this.GridName.Name = "GridName";
+            this.GridName.ReadOnly = true;
+            this.GridName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // GridLogin
+            // 
+            this.GridLogin.HeaderText = "Логин";
+            this.GridLogin.Name = "GridLogin";
+            this.GridLogin.ReadOnly = true;
+            this.GridLogin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // GridPassword
+            // 
+            this.GridPassword.HeaderText = "Пароль";
+            this.GridPassword.Name = "GridPassword";
+            this.GridPassword.ReadOnly = true;
+            this.GridPassword.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // MainForm
             // 

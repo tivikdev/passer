@@ -101,7 +101,6 @@
     <Compile Include="Scripts\CryptoTools.cs" />
     <Compile Include="Scripts\DataBank.cs" />
     <Compile Include="Scripts\Database.cs" />
-    <Compile Include="Scripts\DebugTools.cs" />
     <Compile Include="Scripts\Entry.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>

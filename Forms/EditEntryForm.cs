@@ -56,5 +56,10 @@ namespace WinPasser.Forms
         {
             ShowPassword.ToggleButton(passwordTextBox);
         }
+
+        private void showPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowPassword.ToggleCheckBox(passwordTextBox, showPasswordCheckBox);
+        }
     }
 }

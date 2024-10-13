@@ -8,13 +8,14 @@ namespace WinPasser.Forms
     {
         private PasswordGeneratorProperties properties = new PasswordGeneratorProperties();
         private string password;
-        private int passwordLength;
+        private uint passwordLength;
 
         public PasswordGeneratorForm()
         {
             InitializeComponent();
         }
-        private void ChangePasswordLength(int newLength)
+
+        private void ChangePasswordLength(uint newLength)
         {
             maskedTextBox1.Text = newLength.ToString();
         }
@@ -26,7 +27,7 @@ namespace WinPasser.Forms
             GeneratePasswordForTextBox(properties, passwordLength);
         }
 
-        private void GeneratePasswordForTextBox(PasswordGeneratorProperties properties, int passwordLength)
+        private void GeneratePasswordForTextBox(PasswordGeneratorProperties properties, uint passwordLength)
         {
             password = Generate.CustomizedPassword(properties, passwordLength);
             passwordTextBox.Text = password;
@@ -34,7 +35,7 @@ namespace WinPasser.Forms
 
         private void UpdatePasswordLength(object sender, EventArgs e)
         {
-            passwordLength = trackBar1.Value;
+            passwordLength = Convert.ToUInt32(trackBar1.Value);
             OnLoadActualizePasswordGeneratorProperties();
             ChangePasswordLength(passwordLength);
             GeneratePasswordForTextBox(properties, passwordLength);

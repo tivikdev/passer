@@ -11,7 +11,7 @@ namespace WinPasser
         {
             new Entry()
             {
-                Invisible = true,
+                Invisible = true, // to be able to save even an empty database
             }
         };
 
