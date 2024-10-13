@@ -34,7 +34,6 @@ namespace WinPasser
             }
         }
 
-
         private void ExitIfNeeded()
         {
             if (DataBank.NeedToExit)
@@ -63,13 +62,13 @@ namespace WinPasser
             }
         }
 
-
         private void SaveDatabase(string filePath)
         {
             if (string.IsNullOrEmpty(filePath))
                 return;
 
             database.SaveToJson(filePath);
+            SetStatusLabel("База сохранена");
         }
 
         private Entry GetSelectedEntry()
@@ -86,6 +85,7 @@ namespace WinPasser
             if (selectedEntry != null)
             {
                 Clipboard.SetText(selectedEntry.Password);
+                SetStatusLabel("Пароль скопирован в буфер обмена");
             }
         }
 
@@ -115,7 +115,23 @@ namespace WinPasser
             }
         }
 
+        private void DeleteEntry()
+        {
+            if (entriesGridView.Rows.Count <= 0)
+                return;
+
+            database.entries.RemoveAt(entriesGridView.CurrentCell.RowIndex);
+            FreshUpdateDataGridRows();
+            SetStatusLabel("Запись удалена");
+        }
+
+        private void SetStatusLabel(string text, uint duration = 5000)
+        {
+            statusLabel.Text = text;
+        }
+
         #region Events
+
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.S)
@@ -126,6 +142,10 @@ namespace WinPasser
             {
                 CopyPassword();
             }
+            if (e.KeyCode == Keys.Delete)
+            {
+                DeleteEntry();
+            }
         }
 
         internal void OnLoad(object sender, EventArgs e)
@@ -133,14 +153,8 @@ namespace WinPasser
             ExitIfNeeded();
             ClearGridSelection();
         }
-        private void deleteEntryButton_Click(object sender, EventArgs e)
-        {
-            if (entriesGridView.Rows.Count <= 0) 
-                return;
 
-            database.entries.RemoveAt(entriesGridView.CurrentCell.RowIndex);
-            FreshUpdateDataGridRows();
-        }
+        private void deleteEntryButton_Click(object sender, EventArgs e) => DeleteEntry();
 
         private void AddEntryButton_Click(object sender, EventArgs e) => AddEntry();
 
@@ -151,6 +165,7 @@ namespace WinPasser
         private void editEntryButton_Click(object sender, EventArgs e) => EditEntry();
 
         private void copyPasswordButton_Click(object sender, EventArgs e) => CopyPassword();
+
         #endregion
     }
 }
