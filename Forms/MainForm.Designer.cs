@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.deleteEntryButton = new System.Windows.Forms.Button();
             this.saveEntryButton = new System.Windows.Forms.Button();
             this.addEntryButton = new System.Windows.Forms.Button();
@@ -41,13 +41,14 @@
             this.GridLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.copyPasswordButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.copyPasswordButton = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.copyLoginButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.entriesGridView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,14 +59,13 @@
             // deleteEntryButton
             // 
             this.deleteEntryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteEntryButton.AutoSize = true;
             this.deleteEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.deleteEntryButton.FlatAppearance.BorderSize = 0;
             this.deleteEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteEntryButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.deleteEntryButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteEntryButton.Image")));
             this.deleteEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteEntryButton.Location = new System.Drawing.Point(0, 189);
+            this.deleteEntryButton.Location = new System.Drawing.Point(-3, 200);
             this.deleteEntryButton.Margin = new System.Windows.Forms.Padding(0);
             this.deleteEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
             this.deleteEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
@@ -80,14 +80,13 @@
             // saveEntryButton
             // 
             this.saveEntryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveEntryButton.AutoSize = true;
             this.saveEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.saveEntryButton.FlatAppearance.BorderSize = 0;
             this.saveEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveEntryButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveEntryButton.Image = ((System.Drawing.Image)(resources.GetObject("saveEntryButton.Image")));
             this.saveEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.saveEntryButton.Location = new System.Drawing.Point(0, 389);
+            this.saveEntryButton.Location = new System.Drawing.Point(-3, 500);
             this.saveEntryButton.Margin = new System.Windows.Forms.Padding(0);
             this.saveEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
             this.saveEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
@@ -102,14 +101,13 @@
             // addEntryButton
             // 
             this.addEntryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.addEntryButton.AutoSize = true;
             this.addEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.addEntryButton.FlatAppearance.BorderSize = 0;
             this.addEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addEntryButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addEntryButton.Image = ((System.Drawing.Image)(resources.GetObject("addEntryButton.Image")));
             this.addEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addEntryButton.Location = new System.Drawing.Point(0, -11);
+            this.addEntryButton.Location = new System.Drawing.Point(0, 0);
             this.addEntryButton.Margin = new System.Windows.Forms.Padding(0);
             this.addEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
             this.addEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
@@ -124,14 +122,13 @@
             // editEntryButton
             // 
             this.editEntryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.editEntryButton.AutoSize = true;
             this.editEntryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.editEntryButton.FlatAppearance.BorderSize = 0;
             this.editEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editEntryButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editEntryButton.Image = ((System.Drawing.Image)(resources.GetObject("editEntryButton.Image")));
             this.editEntryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editEntryButton.Location = new System.Drawing.Point(0, 89);
+            this.editEntryButton.Location = new System.Drawing.Point(-3, 100);
             this.editEntryButton.Margin = new System.Windows.Forms.Padding(0);
             this.editEntryButton.MaximumSize = new System.Drawing.Size(400, 100);
             this.editEntryButton.MinimumSize = new System.Drawing.Size(200, 100);
@@ -154,27 +151,27 @@
             this.entriesGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.entriesGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.entriesGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.entriesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.entriesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.entriesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.entriesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridName,
             this.GridLogin,
             this.GridPassword});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.entriesGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.entriesGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.entriesGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.entriesGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.entriesGridView.GridColor = System.Drawing.Color.BlueViolet;
@@ -183,15 +180,15 @@
             this.entriesGridView.Name = "entriesGridView";
             this.entriesGridView.ReadOnly = true;
             this.entriesGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            this.entriesGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            this.entriesGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.entriesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.entriesGridView.ShowCellErrors = false;
             this.entriesGridView.ShowCellToolTips = false;
             this.entriesGridView.ShowEditingIcon = false;
             this.entriesGridView.ShowRowErrors = false;
-            this.entriesGridView.Size = new System.Drawing.Size(880, 607);
+            this.entriesGridView.Size = new System.Drawing.Size(880, 790);
             this.entriesGridView.TabIndex = 1;
             this.entriesGridView.TabStop = false;
             this.entriesGridView.DoubleClick += new System.EventHandler(this.entriesGridView_DoubleClick);
@@ -220,6 +217,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Snow;
+            this.panel1.Controls.Add(this.copyLoginButton);
             this.panel1.Controls.Add(this.copyPasswordButton);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.editEntryButton);
@@ -229,14 +227,35 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 607);
+            this.panel1.Size = new System.Drawing.Size(270, 790);
             this.panel1.TabIndex = 2;
+            // 
+            // copyPasswordButton
+            // 
+            this.copyPasswordButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.copyPasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.copyPasswordButton.FlatAppearance.BorderSize = 0;
+            this.copyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyPasswordButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copyPasswordButton.Image = global::WinPasser.Properties.Resources.copy;
+            this.copyPasswordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.copyPasswordButton.Location = new System.Drawing.Point(0, 400);
+            this.copyPasswordButton.Margin = new System.Windows.Forms.Padding(0);
+            this.copyPasswordButton.MaximumSize = new System.Drawing.Size(400, 100);
+            this.copyPasswordButton.MinimumSize = new System.Drawing.Size(200, 100);
+            this.copyPasswordButton.Name = "copyPasswordButton";
+            this.copyPasswordButton.Size = new System.Drawing.Size(273, 100);
+            this.copyPasswordButton.TabIndex = 8;
+            this.copyPasswordButton.Text = "Копировать пароль";
+            this.copyPasswordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.copyPasswordButton.UseVisualStyleBackColor = true;
+            this.copyPasswordButton.Click += new System.EventHandler(this.copyPasswordButton_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::WinPasser.Properties.Resources.settings;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 574);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 757);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.TabIndex = 7;
@@ -269,34 +288,12 @@
             this.saveFileDialog1.DefaultExt = "passer";
             this.saveFileDialog1.Filter = "Passer-база|*.passer|Все файлы|*.*";
             // 
-            // copyPasswordButton
-            // 
-            this.copyPasswordButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.copyPasswordButton.AutoSize = true;
-            this.copyPasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.copyPasswordButton.FlatAppearance.BorderSize = 0;
-            this.copyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copyPasswordButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.copyPasswordButton.Image = global::WinPasser.Properties.Resources.copy;
-            this.copyPasswordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.copyPasswordButton.Location = new System.Drawing.Point(0, 289);
-            this.copyPasswordButton.Margin = new System.Windows.Forms.Padding(0);
-            this.copyPasswordButton.MaximumSize = new System.Drawing.Size(400, 100);
-            this.copyPasswordButton.MinimumSize = new System.Drawing.Size(200, 100);
-            this.copyPasswordButton.Name = "copyPasswordButton";
-            this.copyPasswordButton.Size = new System.Drawing.Size(273, 100);
-            this.copyPasswordButton.TabIndex = 8;
-            this.copyPasswordButton.Text = "Копировать пароль";
-            this.copyPasswordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.copyPasswordButton.UseVisualStyleBackColor = true;
-            this.copyPasswordButton.Click += new System.EventHandler(this.copyPasswordButton_Click);
-            // 
             // statusStrip
             // 
             this.statusStrip.BackColor = System.Drawing.Color.Snow;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 657);
+            this.statusStrip.Location = new System.Drawing.Point(0, 840);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1150, 22);
             this.statusStrip.TabIndex = 4;
@@ -307,11 +304,32 @@
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(0, 17);
             // 
+            // copyLoginButton
+            // 
+            this.copyLoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.copyLoginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.copyLoginButton.FlatAppearance.BorderSize = 0;
+            this.copyLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyLoginButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copyLoginButton.Image = global::WinPasser.Properties.Resources.copy;
+            this.copyLoginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.copyLoginButton.Location = new System.Drawing.Point(-3, 300);
+            this.copyLoginButton.Margin = new System.Windows.Forms.Padding(0);
+            this.copyLoginButton.MaximumSize = new System.Drawing.Size(400, 100);
+            this.copyLoginButton.MinimumSize = new System.Drawing.Size(200, 100);
+            this.copyLoginButton.Name = "copyLoginButton";
+            this.copyLoginButton.Size = new System.Drawing.Size(273, 100);
+            this.copyLoginButton.TabIndex = 9;
+            this.copyLoginButton.Text = "Копировать логин";
+            this.copyLoginButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.copyLoginButton.UseVisualStyleBackColor = true;
+            this.copyLoginButton.Click += new System.EventHandler(this.copyLoginButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 679);
+            this.ClientSize = new System.Drawing.Size(1150, 862);
             this.Controls.Add(this.entriesGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -328,7 +346,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.entriesGridView)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -356,5 +373,6 @@
         private System.Windows.Forms.Button copyPasswordButton;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.Button copyLoginButton;
     }
 }

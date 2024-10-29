@@ -18,10 +18,8 @@ namespace WinPasser
             {
                 using (StartForm startForm = new StartForm())
                 {
-                    if (startForm.ShowDialog() == DialogResult.OK)
-                            filePath = DataBank.FilePath;
-                    else
-                            DataBank.NeedToExit = true;
+                    if (startForm.ShowDialog() == DialogResult.OK) filePath = DataBank.FilePath;
+                    else DataBank.NeedToExit = true;
                 }
             }
             if (File.Exists(filePath))
@@ -79,6 +77,16 @@ namespace WinPasser
             return database.entries[entriesGridView.CurrentCell.RowIndex + 1];
         }
 
+        private void CopyLogin()
+        {
+            Entry selectedEntry = GetSelectedEntry();
+            if (selectedEntry != null)
+            {
+                Clipboard.SetText(selectedEntry.Login);
+                SetStatusLabel("Логин скопирован в буфер обмена");
+            }
+        }
+
         private void CopyPassword()
         {
             Entry selectedEntry = GetSelectedEntry();
@@ -105,16 +113,6 @@ namespace WinPasser
             }
         }
 
-        private void FreshUpdateDataGridRows()
-        {
-            entriesGridView.Rows.Clear();
-            foreach (Entry entry in database.entries)
-            {
-                if (!entry.Invisible)
-                    entriesGridView.Rows.Add(entry.Title, entry.Login, "••••••••••••••••");
-            }
-        }
-
         private void DeleteEntry()
         {
             if (entriesGridView.Rows.Count <= 0)
@@ -125,34 +123,49 @@ namespace WinPasser
             SetStatusLabel("Запись удалена");
         }
 
+        private void FreshUpdateDataGridRows()
+        {
+            entriesGridView.Rows.Clear();
+            foreach (Entry entry in database.entries)
+            {
+                if (!entry.Invisible)
+                    entriesGridView.Rows.Add(entry.Title, entry.Login, "••••••••••••••••");
+            }
+        }
+
         private void SetStatusLabel(string text, uint duration = 5000)
         {
             statusLabel.Text = text;
         }
 
         #region Events
-
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.S)
-            {
-                SaveDatabase(filePath);
-            }
-            if (e.Control && e.KeyCode == Keys.C)
-            {
-                CopyPassword();
-            }
-            if (e.KeyCode == Keys.Delete)
-            {
-                DeleteEntry();
-            }
-        }
-
         internal void OnLoad(object sender, EventArgs e)
         {
             ExitIfNeeded();
             ClearGridSelection();
         }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e) //write shortcuts here
+        {
+            if (e.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.S:
+                        SaveDatabase(filePath);
+                        break;
+                    case Keys.C:
+                        CopyPassword();
+                        break;
+                }
+            }
+
+            if (e.KeyCode == Keys.D)
+            {
+                DeleteEntry();
+            }
+        }
+
 
         private void deleteEntryButton_Click(object sender, EventArgs e) => DeleteEntry();
 
@@ -164,9 +177,12 @@ namespace WinPasser
 
         private void editEntryButton_Click(object sender, EventArgs e) => EditEntry();
 
+        private void copyLoginButton_Click(object sender, EventArgs e) => CopyLogin();
+
         private void copyPasswordButton_Click(object sender, EventArgs e) => CopyPassword();
 
         #endregion
+
     }
 }
 //I hope I'll understand this shit tomorrow
