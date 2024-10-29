@@ -10,6 +10,8 @@
 
         public static bool NeedToExit { get; set; }
 
+        public static bool IsCreatingEntry { get; set; }
+
         public static string GeneratedPassword { get; set; }
     }
 }

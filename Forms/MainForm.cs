@@ -49,6 +49,7 @@ namespace WinPasser
         private void AddEntry()
         {
             DataBank.ActiveEntry = new Entry();
+            DataBank.IsCreatingEntry = true;
             using (EditEntryForm editEntryForm = new EditEntryForm())
             {
                 if (editEntryForm.ShowDialog() == DialogResult.OK)

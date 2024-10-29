@@ -7,11 +7,16 @@ namespace WinPasser.Forms
     public partial class EditEntryForm : Form
     {
         private readonly Entry activeEntry;
+        private readonly bool isCreatingEntry;
 
         public EditEntryForm()
         {
             InitializeComponent();
             activeEntry = DataBank.ActiveEntry;
+            isCreatingEntry = DataBank.IsCreatingEntry;
+
+            label1.Text = isCreatingEntry ? "Создание новой записи" : "Редактирование записи";
+            DataBank.IsCreatingEntry = false;
             if (activeEntry != null)
             {
                 FillEntryData();
