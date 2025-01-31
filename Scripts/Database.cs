@@ -21,8 +21,6 @@ namespace WinPasser
             using (StreamReader reader = new StreamReader(path))
             {
                 jsonLines = reader.ReadToEnd();
-                reader.Close();
-                reader.Dispose();
             }
 
             if (!string.IsNullOrEmpty(jsonLines))
@@ -49,8 +47,6 @@ namespace WinPasser
             using (StreamReader reader = new StreamReader(path))
             {
                 jsonLines = reader.ReadToEnd();
-                reader.Close();
-                reader.Dispose();
             }
 
             if (!string.IsNullOrEmpty(jsonLines))
@@ -80,8 +76,6 @@ namespace WinPasser
             using (StreamWriter writer = new StreamWriter(path: jsonPath, append: false))
             {
                 writer.WriteLine(encryptedLines);
-                writer.Close();
-                writer.Dispose();
             }
         }
     }
